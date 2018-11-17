@@ -1,1 +1,0 @@
-locust -f my_locust_file.py --host=http://localhost:3000
