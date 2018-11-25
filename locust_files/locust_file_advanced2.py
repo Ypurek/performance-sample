@@ -2,12 +2,12 @@ from locust import HttpLocust, TaskSet, task
 import random as r
 
 
+# class UserBehavior(TaskSet):
+#     def __init__(self, parent):
+#         super(UserBehavior, self).__init__(parent)
+#         self.created_posts = list()
 class UserBehavior(TaskSet):
     created_posts = []
-
-    def teardown(self):
-        for id in self.created_posts:
-            self.client.delete(f'/posts/{id}')
 
     @task(1)
     def create_post(self):
@@ -24,7 +24,6 @@ class UserBehavior(TaskSet):
             return
         post_id = r.choice(self.created_posts)
         self.client.get(f'/posts/{post_id}', name='read post')
-
 
 
 class WebsiteUser(HttpLocust):
