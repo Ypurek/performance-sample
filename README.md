@@ -4,6 +4,23 @@
 TODO add table
 
 ## Max performance test
+To collect metrics of performance testing tools created small server on Flask running in 4 gunicorn workers  
+1. Get docker
+2. Run commands below
+```bash
+cd flask_server
+docker build --tag <your docker registry>/perf-target .
+docker push <your docker registry>/perf-target:latest
+```
+To check docker container:  
+1. Check port 8888 not used
+2. Use next command
+3. Open http://localhost:8888
+```bash
+docker run --rm -p 8888:8888 <your docker registry>/perf-target
+```
+
+
 Test PC:  
 * CPU Core i7-7700 2.8 Ghz
 * RAM 16 Gb
