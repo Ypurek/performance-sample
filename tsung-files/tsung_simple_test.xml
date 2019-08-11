@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!--<!DOCTYPE tsung SYSTEM "/usr/share/tsung/tsung-1.0.dtd" [] >-->
+<!-- http://tsung.erlang-projects.org/user_manual/introduction.html -->
+<tsung loglevel="info">
+    <!--    <option name="thinktime" value="2" random="true" override="true"/>-->
+    <option name="connect_timeout" value="30000"/>
+    <option name="max_retries" value="3"/> <!-- default 3, disable 0 -->
+    <!--    <option name="ports_range" min="1025" max="65535"/>-->
+
+    <clients maxusers="10000">
+        <client host="localhost" use_controller_vm="true"/>
+    </clients>
+
+    <servers>
+        <!-- types: tcp, ssl, udp, tcp6, ssl6, udp6, websocket, bosch -->
+        <server host="localhost" port="3000" type="tcp"></server>
+    </servers>
+    <!--units: second, minute, hour-->
+    <load duration="3" unit="minute">>
+        <!--    arrivalphase >= 1    -->
+        <arrivalphase phase="1" duration="15" unit="second">
+            <users interarrival="2" unit="second" maxnumber="10"></users>
+            <!--            <session_setup name="get_posts" probability="66"/>-->
+            <!--            <session_setup name="post_comment" probability="33"/>-->
+        </arrivalphase>
+        <!--        <user session="http-example" start_time="185" unit="second"></user>-->
+
+    </load>
+
+    <sessions>
+        <session name="get_posts" weight="2" type="ts_http">
+            <thinktime min="1" max="2" random="true"></thinktime>
+            <request>
+                <http url="/posts" method="GET">
+                    <http_header name="Cache-Control" value="no-cache"/>
+                </http>
+            </request>
+        </session>
+<!--        <session name="post_comment" weight="1" type="ts_http">-->
+<!--            <thinktime min="1" max="2" random="true"></thinktime>-->
+<!--            <request>-->
+<!--                <http url="/comments"-->
+<!--                      method="POST"-->
+<!--                      content_type="application/json"-->
+<!--                      contents_from_file="comment.json"/>-->
+<!--            </request>-->
+<!--        </session>-->
+    </sessions>
+</tsung>

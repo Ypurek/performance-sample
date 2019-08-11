@@ -26,6 +26,7 @@ Test PC:
 * RAM 16 Gb
 * Windows 10 Pro x64
 * Java 12
+* Scala 2.13
 Tested Server on NAS:
 * CPU Intel Celeron J1900 2 Ghz
 * RAM 8 Gb
@@ -40,6 +41,7 @@ Profile:
 * Test time 2 min
 
 ### JMeter results:
+* version 5.1.1
 * 20% CPU
 * 2 Gb RAM
 * 10 000 Threads
@@ -47,6 +49,25 @@ Profile:
 * 62% failed
 * Avg resp time 14.7 sec
 ### Locust results
+* version 0.11
+* 12% CPU
+* 450 Mb RAM
+* 14 Threads
+* ~25K requests
+* 100% pass
+* Avg resp time 21.7 sec
+Notes:
+* locust works slower with PC names (than IP addresses)
+* locust ramp time <= 4000 users/min
+### Gatling results
+* version 3.1.3
+* 30% CPU
+* 800 Mb RAM
+* 75 Threads
+* ~127K requests
+* 59% failed
+* Avg resp time 10 sec
+
 
 ## Simple test server to play with
 Server - https://jsonplaceholder.typicode.com/  

@@ -5,7 +5,7 @@ import io.gatling.http.Predef._
 import scala.concurrent.duration._
 
 
-class Simple2 extends Simulation {
+class SimpleMinimized extends Simulation {
 
   val httpProtocol = http
     .baseUrl("http://localhost:3000")
