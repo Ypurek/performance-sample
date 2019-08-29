@@ -1,9 +1,22 @@
 # performance samples
 ## Performance tools comparison
+| Tool                | Locust        | JMeter          | Gatling                                |
+|---------------------|---------------|-----------------|----------------------------------------|
+| Language            | Python        | Java            | Scala                                  |
+| Platform            | X-platform    | X-platform      | X-platform                             |
+| Install             | 1 line comand | Unpack arcive   | Get maven, get plugins, unpack archive |
+| Record/playback     | No            | Yes             | Yes                                    |
+| Simple test, aprox. |  5 min        | 10 min          | 20 min                                 |
+| Transaction tests   | Yes           | Yes             | Yes                                    |
+| Protocols           | HTTP+         | various         | HTTP+                                  |
+| Distributed testing | Yes           | Yes             | Only Enterprise                        |
+| Reports             | Live          | Live, after run | after run                              |
 
-TODO add table
+Q: Why there are no Yandex.Tank, Artillery Load Runner?
+A: Don't support transactions, too raw, paid one. Maybe will add some tools later
 
 ## Max performance test
+### Target prepaparion
 To collect metrics of performance testing tools created small server on Flask running in 4 gunicorn workers  
 1. Get docker
 2. Run commands below
@@ -20,53 +33,33 @@ To check docker container:
 docker run --rm -p 8888:8888 <your docker registry>/perf-target
 ```
 
-
-Test PC:  
+### Test PC spec  
 * CPU Core i7-7700 2.8 Ghz
 * RAM 16 Gb
 * Windows 10 Pro x64
 * Java 12
 * Scala 2.13
-Tested Server on NAS:
+* Python 3.6
+### Tested Server on NAS:
 * CPU Intel Celeron J1900 2 Ghz
 * RAM 8 Gb
 * Flask WS in Docker python:3.7-alpine 4 Gb RAM
-Network:
+### Network:
 * 100 Mbps
-Profile:
+### Test Profile #1:
 * 10 000 users
 * 1 get request
 * pause 1000 - 2000 ms
-* Ramp time 30 sec
+* Ramp time 100 sec
+* Test time 5 min
+### Test Profile #2:
+* 500 users
+* 1 get request
+* pause 1000 - 2000 ms
+* Ramp time 10 sec
 * Test time 2 min
-
-### JMeter results:
-* version 5.1.1
-* 20% CPU
-* 2 Gb RAM
-* 10 000 Threads
-* ~70K requests
-* 62% failed
-* Avg resp time 14.7 sec
-### Locust results
-* version 0.11
-* 12% CPU
-* 450 Mb RAM
-* 14 Threads
-* ~25K requests
-* 100% pass
-* Avg resp time 21.7 sec
-Notes:
-* locust works slower with PC names (than IP addresses)
-* locust ramp time <= 4000 users/min
-### Gatling results
-* version 3.1.3
-* 30% CPU
-* 800 Mb RAM
-* 75 Threads
-* ~127K requests
-* 59% failed
-* Avg resp time 10 sec
+### Test Results
+TODO
 
 
 ## Simple test server to play with
