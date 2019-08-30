@@ -110,7 +110,8 @@ docker run --rm -p 8888:8888 <your docker registry>/perf-target
 * 1 get request
 * pause 1000 - 2000 ms
 * Ramp time 100 sec
-* Test time 5 min
+* Test time 5 min  
+
 |Metric                      | Locust | JMeter | Gatling |
 |----------------------------|--------|--------|---------|
 | Throughput (PRS)           | 350    | 250    | 190     |
@@ -126,7 +127,8 @@ docker run --rm -p 8888:8888 <your docker registry>/perf-target
 * 1 get request
 * pause 1000 - 2000 ms
 * Ramp time 10 sec
-* Test time 2 min
+* Test time 2 min  
+
 |Metric                     | Locust | JMeter | Gatling |
 |---------------------------|--------|--------|---------|
 | Throughput (PRS)          | 300    | 240    | 277     |
