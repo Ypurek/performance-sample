@@ -599,30 +599,6 @@
       "id": 100,
       "title": "at nam consequatur ea labore ea harum",
       "body": "cupiditate quo est a modi nesciunt soluta\nipsa voluptas error itaque dicta in\nautem qui minus magnam et distinctio eum\naccusamus ratione error aut"
-    },
-    {
-      "userId": 1,
-      "title": "my shiny new post",
-      "body": "hello everybody",
-      "id": 101
-    },
-    {
-      "userId": 1,
-      "title": "my shiny new post",
-      "body": "hello everybody",
-      "id": 102
-    },
-    {
-      "userId": 1,
-      "title": "my shiny new post",
-      "body": "hello everybody",
-      "id": 103
-    },
-    {
-      "userId": 1,
-      "title": "my shiny new post",
-      "body": "hello everybody",
-      "id": 104
     }
   ],
   "comments": [
@@ -4125,34 +4101,6 @@
       "name": "ex eaque eum natus",
       "email": "Emma@joanny.ca",
       "body": "perspiciatis quis doloremque\nveniam nisi eos velit sed\nid totam inventore voluptatem laborum et eveniet\naut aut aut maxime quia temporibus ut omnis"
-    },
-    {
-      "postId": 101,
-      "name": "my comment",
-      "email": "test@user.test",
-      "body": "Author is cool. Some text. Hello world!",
-      "id": 501
-    },
-    {
-      "postId": 102,
-      "name": "my comment",
-      "email": "test@user.test",
-      "body": "Author is cool. Some text. Hello world!",
-      "id": 502
-    },
-    {
-      "postId": 103,
-      "name": "my comment",
-      "email": "test@user.test",
-      "body": "Author is cool. Some text. Hello world!",
-      "id": 503
-    },
-    {
-      "postId": 104,
-      "name": "my comment",
-      "email": "test@user.test",
-      "body": "Author is cool. Some text. Hello world!",
-      "id": 504
     }
   ],
   "albums": [

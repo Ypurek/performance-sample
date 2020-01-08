@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
-<!--<!DOCTYPE tsung SYSTEM "/usr/share/tsung/tsung-1.0.dtd" [] >-->
+<!DOCTYPE tsung SYSTEM "/usr/share/tsung/tsung-1.0.dtd" [] >
 <!-- http://tsung.erlang-projects.org/user_manual/introduction.html -->
 <tsung loglevel="info">
     <!--    <option name="thinktime" value="2" random="true" override="true"/>-->
-    <option name="connect_timeout" value="30000"/>
-    <option name="max_retries" value="3"/> <!-- default 3, disable 0 -->
+<!--    <option name="connect_timeout" value="30000"/>-->
+<!--    <option name="max_retries" value="3"/> &lt;!&ndash; default 3, disable 0 &ndash;&gt;-->
     <!--    <option name="ports_range" min="1025" max="65535"/>-->
 
-    <clients maxusers="10000">
-        <client host="localhost" use_controller_vm="true"/>
+    <clients>
+        <client host="localhost" use_controller_vm="true" maxusers="10000"/>
     </clients>
 
     <servers>

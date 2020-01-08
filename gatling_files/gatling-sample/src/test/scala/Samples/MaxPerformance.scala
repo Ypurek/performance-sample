@@ -15,7 +15,7 @@ class MaxPerformance extends Simulation {
       .get("/"))
       .pause(1 second, 2 seconds))
 
-  setUp(scn.inject(rampUsers(10000) during (30 seconds), nothingFor(2 minutes)))
+  setUp(scn.inject(rampUsers(10000) during (100 seconds), nothingFor(200 seconds)))
     .pauses(normalPausesWithStdDevDuration(2 seconds))
-    .maxDuration(160 seconds).protocols(httpProtocol)
+    .maxDuration(300 seconds).protocols(httpProtocol)
 }

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE tsung SYSTEM "/usr/share/tsung/tsung-1.0.dtd" []>
+<tsung loglevel="warning">
+
+    <clients>
+        <client host="localhost" maxusers="30"/>
+    </clients>
+
+    <servers>
+        <server host="nas" port="8888" type="tcp"/>
+    </servers>
+
+    <load>
+        <arrivalphase phase="1" duration="1" unit="minute">
+            <users arrivalrate="5" unit="second"/>
+        </arrivalphase>
+    </load>
+
+    <sessions>
+        <session name="stewie_analytics_load" weight="1" type="ts_http">
+            <request>
+                <http url="/" method="GET"/>
+            </request>
+        </session>
+    </sessions>
+</tsung>

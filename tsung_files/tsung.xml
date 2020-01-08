@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE tsung SYSTEM "/usr/share/tsung/tsung-1.0.dtd" [] >
+<!-- http://tsung.erlang-projects.org/user_manual/introduction.html -->
+<tsung loglevel="info">
+    <option name="max_retries" value="3"/>
+    <option name="connect_timeout" value="60000"/>
+
+    <clients>
+        <client host="localhost" use_controller_vm="true" maxusers="500"/>
+    </clients>
+
+    <servers>
+        <server host="192.168.2.136" port="8888" type="tcp"></server>
+    </servers>
+
+    <load duration="2" unit="minute">>
+        <arrivalphase phase="1" duration="10" unit="second">
+            <users interarrival="1" arrivalrate="50"  unit="second" maxnumber="500"></users>
+        </arrivalphase>
+    </load>
+
+    <sessions>
+        <session name="simple_get" probability="100" type="ts_http">
+            <thinktime min="1" max="2" random="true"></thinktime>
+            <request>
+                <http url="/" method="GET">
+                    <http_header name="Cache-Control" value="no-cache"/>
+                </http>
+            </request>
+        </session>
+    </sessions>
+</tsung>
