@@ -1,4 +1,4 @@
-from locust import HttpLocust, TaskSet, task, between
+from locust import HttpLocust, TaskSet, task
 
 
 class UserBehavior(TaskSet):
@@ -9,5 +9,6 @@ class UserBehavior(TaskSet):
 
 class WebsiteUser(HttpLocust):
     task_set = UserBehavior
-    host = 'http://192.168.1.86:8888'
-    wait_time = between(1, 2)
+    host = 'http://192.168.2.136:8888/'
+    min_wait = 1000
+    max_wait = 2000
