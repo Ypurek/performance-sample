@@ -93,11 +93,11 @@ docker run --rm -p 8888:8888 <your docker registry>/perf-target
 ```
 
 ### Test PC spec  
-* CPU Core i7-7700 2.8 Ghz
+* CPU AMD Ryzen 7 4800H 2.9 Ghz
 * RAM 16 Gb
-* Windows 10 1909 Pro x64
-* Java 12
-* Scala 2.13
+* Windows 10 2004 Pro x64
+* Java 8
+* Scala 2.12
 * Python 3.8
 ### Tested Server on NAS:
 * CPU Intel Celeron J1900 2 Ghz
@@ -114,14 +114,13 @@ docker run --rm -p 8888:8888 <your docker registry>/perf-target
 
 |Metric                      | Locust | JMeter | Gatling |
 |----------------------------|--------|--------|---------|
-| Throughput (PRS)           | 370    | 404    | 805     |
-| Average response time, sec | 0.9    | 15     | 8       |
-| Median response time, sec  | 0.1    | 21     | 3.3     |
-| Test PC CPU, %             | 14     | 20     | 20      |
-| Test PC RAM, Gb            | 0.5    | 2.3    | 1.2     |
-| Test PC Threads            | 14     | 10039  | 77      |
-| Total requests             | 111 232| 155 277| 241 466 |
-| Success rate               | 100    | 17.3   | 20      |
+| Throughput (PRS)           | 533    | 475    | 794     |
+| Average response time, sec | 10.5   | 15.6   | 9.8     |
+| Median response time, sec  | 13     | 21     | 10      |
+| Test PC RAM, Gb            | 0.8    | 2.3    | 1.5     |
+| Test PC Threads            | 14     | 10056  | 117     |
+| Total requests             | 114 882| 100 797| 142 997 |
+| Success rate               | 100    | 36     | 29      |
 
 ### Test Profile #2:
 * 500 users
@@ -132,11 +131,10 @@ docker run --rm -p 8888:8888 <your docker registry>/perf-target
 
 |Metric                     | Locust | JMeter | Gatling |
 |---------------------------|--------|--------|---------|
-| Throughput (PRS)          | 310    | 238    | 272     |
-| Average response time, ms | 60     | 45     | 14      |
-| Median response time, ms  | 40     | 12     | 11      |
-| Test PC CPU, %            | 10     | 20     | 10      |
-| Test PC RAM, Mb           | 50     | 1400   | 500     |
-| Test PC Threads           | 14     | 562    | 64      |
-| Total requests            | 38 865 | 28 313 | 32 676  |
-| Success rate              | 100    | 91     | 73      |
+| Throughput (PRS)          | 330    | 235    | 269     |
+| Average response time, ms | 30     | 50     | 27      |
+| Median response time, ms  | 14     | 6      | 10      |
+| Test PC RAM, Mb           | 59     | 1280   | 1252    |
+| Test PC Threads           | 14     | 528    | 84      |
+| Total requests            | 36 731 | 27 805 | 32 335  |
+| Success rate              | 100    | 100    | 100     |
